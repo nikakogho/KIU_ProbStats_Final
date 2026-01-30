@@ -1,0 +1,22 @@
+=== Descriptive Statistics ===
+
+Total observations: 153 
+
+Landing success by reuse status:
+   group successes   n      rate  ci_lower  ci_upper
+1    New        38  46 0.8260870 0.6927665 0.9091421
+2 Reused       104 107 0.9719626 0.9207919 0.9904195
+
+Landing success by reuse bucket:
+  reuse_bucket successes  n      rate
+1            1        38 46 0.8260870
+2            2        23 23 1.0000000
+3            3        14 14 1.0000000
+4            4        13 14 0.9285714
+5           5+        54 56 0.9642857
+
+Payload mass (kg):
+Q1 = 3136 
+Q3 = 13260 
+IQR = 10124 
+Outliers (1.5*IQR rule): 0 
