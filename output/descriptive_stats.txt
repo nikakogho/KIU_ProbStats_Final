@@ -20,3 +20,27 @@ Q1 = 3136
 Q3 = 13260 
 IQR = 10124 
 Outliers (1.5*IQR rule): 0 
+
+
+=== Extra Descriptives & Associations (X-X) ===
+
+Payload mass (kg) summary:
+        n      mean        sd    median        Q1        Q3       IQR       p10 
+  133.000  8855.381  5637.215  9600.000  3136.000 13260.000 10124.000  1913.800 
+      p90 
+15600.000 
+
+
+Reuse flight (count) summary:
+      n    mean      sd  median      Q1      Q3     IQR     p10     p90 
+153.000   4.150   3.391   3.000   1.000   6.000   5.000   1.000   9.000 
+
+
+Correlation matrix (pairwise complete obs):
+                      reuse_flight payload_mass_kg_total  year
+reuse_flight                 1.000                 0.590 0.621
+payload_mass_kg_total        0.590                 1.000 0.588
+year                         0.621                 0.588 1.000
+
+
+Saved: figs/payload_vs_year.png

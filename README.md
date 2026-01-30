@@ -37,6 +37,7 @@ source("src/01_setup_and_get_falcon9_id.R")
 source("src/02_download_raw_launches.R")
 source("src/03_build_clean_dataset.R")
 source("src/04_descriptives_and_plots.R")
+source("src/04b_extra_descriptives_assoc.R")
 source("src/05_simulation_mle_ci.R")
 source("src/06_inference_real_data.R")
 source("src/07_export_report_snippets.R")
@@ -93,3 +94,10 @@ Therefore we also report Fisher’s exact test for the primary comparison.
 ## Report
 - Main write-up: `REPORT.md` (includes figures and results)
 - Key numeric outputs: `output/inference_results.txt`, `output/model_summary.txt`
+
+## Script-to-report mapping
+- Report §1–2: `REPORT.md`, variables table in `output/variables_table.md`
+- Report §3–5: `src/04_descriptives_and_plots.R` + `src/04b_extra_descriptives_assoc.R`
+- Report §6: analytical derivation text in `REPORT.md`, simulation in `src/05_simulation_mle_ci.R`
+- Report §7: `src/06_inference_real_data.R` (tests + GLM) and `output/key_results.md`
+- Report §9–10: reproducibility via `run_all.R`, data in `data/`
