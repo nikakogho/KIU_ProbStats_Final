@@ -1,0 +1,69 @@
+=== Step 6: Real-data inference on Falcon 9 landing attempts ===
+
+Data rows (landing attempts, clean): 153 
+
+---- New vs Reused (primary question)
+New:    successes = 38 out of 46  | p̂ = 0.8261 
+Reused: successes = 104 out of 107  | p̂ = 0.972 
+
+Wilson 95% CI (New):   [ 0.6928 , 0.9091 ]
+Wilson 95% CI (Reused):[ 0.9208 , 0.9904 ]
+
+Difference (Reused - New) in sample proportions: 0.1459 
+2x2 odds ratio (continuity-corrected): 6.5918 
+
+prop.test (no Yates correction):
+
+	2-sample test for equality of proportions without continuity correction
+
+data:  c(x_new, x_reused) out of c(n_new, n_reused)
+X-squared = 10.259, df = 1, p-value = 0.00136
+alternative hypothesis: two.sided
+95 percent confidence interval:
+ -0.25978797 -0.03196335
+sample estimates:
+   prop 1    prop 2 
+0.8260870 0.9719626 
+
+
+Fisher exact test:
+
+	Fisher's Exact Test for Count Data
+
+data:  tab_2x2
+p-value = 0.003136
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.02259461 0.61732409
+sample estimates:
+odds ratio 
+ 0.1391072 
+
+
+---- Reuse bucket association (1,2,3,4,5+)
+Contingency table (reuse_bucket x landing_success):
+    
+      0  1
+  1   8 38
+  2   0 23
+  3   0 14
+  4   1 13
+  5+  2 54
+
+Chi-square test (warning: approximation may be weak if small expected counts):
+
+	Pearson's Chi-squared test
+
+data:  tab_bucket
+X-squared = 11.14, df = 4, p-value = 0.02504
+
+
+Fisher test with simulated p-value (B=5000):
+
+	Fisher's Exact Test for Count Data with simulated p-value (based on
+	5000 replicates)
+
+data:  tab_bucket
+p-value = 0.03899
+alternative hypothesis: two.sided
+

@@ -1,0 +1,75 @@
+=== Logistic regression models (binomial GLM) ===
+
+Model dataset rows (non-missing payload & year): 133 
+
+---- Model A: landing_success ~ is_reused + payload_tons + year_c
+
+Call:
+glm(formula = landing_success ~ is_reused + payload_tons + year_c, 
+    family = binomial(), data = df_m)
+
+Coefficients:
+             Estimate Std. Error z value Pr(>|z|)   
+(Intercept)    4.7887     1.6180   2.960  0.00308 **
+is_reused      0.5251     1.1249   0.467  0.64067   
+payload_tons  -0.1723     0.1231  -1.400  0.16150   
+year_c         0.7614     0.2981   2.554  0.01064 * 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 75.898  on 132  degrees of freedom
+Residual deviance: 57.075  on 129  degrees of freedom
+AIC: 65.075
+
+Number of Fisher Scoring iterations: 7
+
+
+Odds ratios + 95% Wald CI:
+          term   estimate std_error    z_value     p_value odds_ratio
+1  (Intercept)  4.7886654 1.6180043  2.9596123 0.003080264 120.140918
+2    is_reused  0.5250724 1.1249342  0.4667583 0.640672817   1.690581
+3 payload_tons -0.1723482 0.1231025 -1.4000384 0.161501822   0.841686
+4       year_c  0.7614032 0.2980996  2.5541908 0.010643493   2.141279
+  or_ci_lower or_ci_upper
+1   5.0401473 2863.773489
+2   0.1864191   15.331398
+3   0.6612491    1.071359
+4   1.1937967    3.840750
+
+---- Model B: landing_success ~ reuse_flight + payload_tons + year_c
+
+Call:
+glm(formula = landing_success ~ reuse_flight + payload_tons + 
+    year_c, family = binomial(), data = df_m)
+
+Coefficients:
+             Estimate Std. Error z value Pr(>|z|)   
+(Intercept)   5.20416    1.70808   3.047  0.00231 **
+reuse_flight -0.04468    0.21708  -0.206  0.83691   
+payload_tons -0.15617    0.12131  -1.287  0.19795   
+year_c        0.84626    0.30725   2.754  0.00588 **
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 75.898  on 132  degrees of freedom
+Residual deviance: 57.256  on 129  degrees of freedom
+AIC: 65.256
+
+Number of Fisher Scoring iterations: 6
+
+
+Odds ratios + 95% Wald CI:
+          term    estimate std_error    z_value     p_value  odds_ratio
+1  (Intercept)  5.20416050 1.7080753  3.0467980 0.002312931 182.0279970
+2 reuse_flight -0.04468443 0.2170760 -0.2058469 0.836910488   0.9562992
+3 payload_tons -0.15617333 0.1213071 -1.2874213 0.197947476   0.8554109
+4       year_c  0.84625601 0.3072532  2.7542624 0.005882458   2.3309036
+  or_ci_lower or_ci_upper
+1   6.4006169 5176.718468
+2   0.6249112    1.463421
+3   0.6744007    1.085005
+4   1.2764091    4.256560
