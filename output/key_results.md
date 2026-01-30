@@ -21,7 +21,7 @@
   4   1 13
   5+  2 54
 ```
-- Fisher test with simulated p-value: p-value = 0.04499.
+- Fisher test with simulated p-value: p-value = 0.03899.
 
 ## Robustness: logistic regression (controls)
 - Model A: landing_success ~ is_reused + payload_tons + year_c (n=133 with non-missing payload).
