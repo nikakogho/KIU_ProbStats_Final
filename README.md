@@ -57,6 +57,7 @@ source("src/07_export_report_snippets.R")
 * `figs/success_vs_payload_bins.png`
 * `figs/sim_sampling_distribution.png`
 * `figs/sim_ci_coverage.png`
+* `figs/payload_vs_year.png`
 
 ### Results text
 
