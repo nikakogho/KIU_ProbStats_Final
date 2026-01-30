@@ -89,3 +89,7 @@ Payload mass:
 
 The approximation warning from `prop.test` can occur because some failure counts are small.
 Therefore we also report Fisher’s exact test for the primary comparison.
+
+## Report
+- Main write-up: `REPORT.md` (includes figures and results)
+- Key numeric outputs: `output/inference_results.txt`, `output/model_summary.txt`
