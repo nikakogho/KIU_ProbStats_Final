@@ -1,0 +1,13 @@
+=== Monte Carlo Validation of Bernoulli MLE ===
+
+True p: 0.85 
+Sample size n: 50 
+Simulations: 10000 
+
+Mean of p_hat: 0.849678 
+Theoretical mean: 0.85 
+
+Variance of p_hat: 0.002507267 
+Theoretical variance: 0.00255 
+
+95% Wilson CI coverage: 0.9573 
