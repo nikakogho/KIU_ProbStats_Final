@@ -19,6 +19,11 @@ We query Falcon 9 launches and use the `cores` field to identify landing attempt
 - Logistic regression (binomial GLM) controlling for payload mass and year
 - Monte Carlo simulation to validate MLE behavior and CI coverage
 
+## Conclusion
+In the clean Falcon 9 landing-attempt dataset, the raw landing success rate is higher for **reused** boosters than for **new** boosters, and the difference is statistically significant using **Fisher’s exact test**.
+
+However, in logistic regression models that control for **year** and **payload mass**, reuse indicators (`is_reused` or `reuse_flight`) are not statistically significant while **year** remains significant. This suggests the raw difference is largely explained by improvements over time (operational/engineering learning) and by reused boosters being more common in later years. Therefore, the raw association should not be interpreted as “reuse causes higher reliability,” but as an association that is largely driven by temporal improvement.
+
 ## Project structure
 - `src/` — scripts for each step of the pipeline
 - `data/` — downloaded and cleaned datasets
